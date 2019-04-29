@@ -1,0 +1,15 @@
+current directory: /Users/reggordon/src/github.com/Shopify/movies-graphql_with_frontend/vendor/bundle/gems/bootsnap-1.4.4/ext/bootsnap
+/opt/rubies/2.5.1/bin/ruby -I /opt/rubies/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20190429-24574-3exrmw.rb extconf.rb
+creating Makefile
+
+current directory: /Users/reggordon/src/github.com/Shopify/movies-graphql_with_frontend/vendor/bundle/gems/bootsnap-1.4.4/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/reggordon/src/github.com/Shopify/movies-graphql_with_frontend/vendor/bundle/gems/bootsnap-1.4.4/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/reggordon/src/github.com/Shopify/movies-graphql_with_frontend/vendor/bundle/gems/bootsnap-1.4.4/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20190429-24574-juv55k/bootsnap

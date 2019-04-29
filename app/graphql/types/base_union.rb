@@ -1,4 +1,6 @@
 module Types
-  class BaseUnion < GraphQL::Schema::Union
+  module BaseUnion 
+    include GraphQL::Schema::Union
   end
 end
+
