@@ -1,64 +1,43 @@
-This is a basic Rails API with Graphiql installed to allow for local testing
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Rails APIs do not install Graphiql by default so it takes some jiggery pokery to get it up and running
+## This is a basic Movie app with GraphQL mutations and queries added
 
-Basic Set up:
+In the project directory, you can run:
+`rails s` and then navigate to `localhost:4000/graphql` to make or query mutations
 
-Rails new APPNAME --api
-
-this creates a lighter app but it has limitations
-
-Add:
-
+currently you need to add in `__typename` to the payload for any mutation to get confirmation it is working EG:
 
 ```
-gem 'graphql'
-gem 'graphiql-rails', group: :development
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'mini_racer', platforms: :ruby
-
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'`
-```
-
-to the existing Gem file and bundle install
-
-
-add:
-```
-Rails.application.routes.draw do
-  if Rails.env.development?
-    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
-  end
-  post "/graphql", to: "graphql#execute"
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-end
-```
-
-to the routes.rb file
-
-In terminal:
-
-```
-rails g graphql:install
-```
-
-and then 
-```
-bundle install
+mutation{
+createMovie(title:"this is the title" description:"this is the description"){
+  __typename
+}
+}
 ```
 
 
-Then go on as normal :) 
+cding to the `movies` folder and running `Yarn install` and then `Yarn start` runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Note:
-Nov 1st: There have been massive changes to the whoe GraphQl-Ruby Gem in the last few months rendering practically every online tutorial out of date. Please refer to the http://graphql-ruby.org/ docs if you are going to start exploring this. Truct me it will save you days of frustration!
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
